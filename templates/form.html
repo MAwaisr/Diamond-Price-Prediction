@@ -1,161 +1,164 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Diamond Information Form</title>
+  <title>Diamond Price Form</title>
   <style>
-    /* Style for hiding the checkboxes */
-    input[type="checkbox"] {
-      display: none;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    /* Style for label */
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #333;
+      margin-top: 15px;
+      margin-bottom: 5px; /* Adjusted margin */
+    }
+
     label {
-      padding: 5px;
-      border: 1px solid #ccc;
-      display: inline-block;
-      cursor: pointer;
+      display: block;
+      margin-bottom: 5px;
     }
 
-    /* Style for label when checked */
-    input[type="checkbox"]:checked + label {
+    input[type="number"], select, input[type="submit"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      width: calc(100% - 22px);
+      margin-bottom: 10px;
+      border-radius: 5px;
+      font-size: 16px; /* Adjusted font size */
+    }
+
+    input[type="submit"] {
       background-color: #6a0606;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      width: 100%;
+      font-size: 18px; /* Adjusted font size */
+    }
+
+    input[type="submit"]:hover {
+      background-color: #4b0303;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: auto;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
-<h1>Diamond Information Form</h1>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-<form action="/submit" method="post">
-  <label for="carat">Carat:</label>
-  <input type="number" id="carat" name="carat" step="0.01" required><br><br>
+<div class="container">
+  <h1>Diamond Price Prediction Form</h1>
 
-  <h2>Cut:</h2>
-  <label class="checkbox-label" for="cut_fair">
-    <input type="checkbox" id="cut_fair" name="cut" value="Fair">
-    Fair
-  </label>
+  <form action="/submit" method="post">
+    <label for="carat">Carat:</label>
+    <input type="number" id="carat" name="carat" step="0.01" required>
 
-  <label class="checkbox-label" for="cut_good">
-    <input type="checkbox" id="cut_good" name="cut" value="Good">
-    Good
-  </label>
+    <label for="depth">Cut:</label>
+    <select id="cut" name="cut">
+      <option value="Fair">Fair</option>
+      <option value="Good">Good</option>
+      <option value="Very Good">Very Good</option>
+      <option value="Premium">Premium</option>
+      <option value="Ideal">Ideal</option>
+    </select>
 
-  <label class="checkbox-label" for="cut_very_good">
-    <input type="checkbox" id="cut_very_good" name="cut" value="Very Good">
-    Very Good
-  </label>
+    <label for="depth">Color:</label>
+    <select id="color" name="color">
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+      <option value="J">J</option>
+    </select>
 
-  <label class="checkbox-label" for="cut_premium">
-    <input type="checkbox" id="cut_premium" name="cut" value="Premium">
-    Premium
-  </label>
+    <label for="depth">clarity:</label>
+    <select id="clarity" name="clarity">
+      <option value="I1">I1</option>
+      <option value="SI2">SI2</option>
+      <option value="SI1">SI1</option>
+      <option value="VS2">VS2</option>
+      <option value="VS1">VS1</option>
+      <option value="VVS2">VVS2</option>
+      <option value="VVS1">VVS1</option>
+      <option value="IF">IF</option>
+    </select>
 
-  <label class="checkbox-label" for="cut_ideal">
-    <input type="checkbox" id="cut_ideal" name="cut" value="Ideal">
-    Ideal
-  </label><br><br>
+    <label for="depth">Depth (float):</label>
+    <input type="number" id="depth" name="depth" step="0.01" required>
 
-  <h2>Color:</h2>
-  <label class="checkbox-label" for="color_d">
-    <input type="checkbox" id="color_d" name="color" value="D">
-    D
-  </label>
+    <label for="table">Table (float):</label>
+    <input type="number" id="table" name="table" step="0.01" required>
 
-  <label class="checkbox-label" for="color_e">
-    <input type="checkbox" id="color_e" name="color" value="E">
-    E
-  </label>
+    <input type="submit" value="Submit">
+  </form>
+</div>
 
-  <label class="checkbox-label" for="color_f">
-    <input type="checkbox" id="color_f" name="color" value="F">
-    F
-  </label>
-
-  <label class="checkbox-label" for="color_g">
-    <input type="checkbox" id="color_g" name="color" value="G">
-    G
-  </label>
-
-  <label class="checkbox-label" for="color_h">
-    <input type="checkbox" id="color_h" name="color" value="H">
-    H
-  </label>
-
-  <label class="checkbox-label" for="color_i">
-    <input type="checkbox" id="color_i" name="color" value="I">
-    I
-  </label>
-
-  <label class="checkbox-label" for="color_j">
-    <input type="checkbox" id="color_j" name="color" value="J">
-    J
-  </label><br><br>
-
-  <h2>Clarity:</h2>
-  <label class="checkbox-label" for="clarity_i1">
-    <input type="checkbox" id="clarity_i1" name="clarity" value="I1">
-    I1
-  </label>
-
-  <label class="checkbox-label" for="clarity_si2">
-    <input type="checkbox" id="clarity_si2" name="clarity" value="SI2">
-    SI2
-  </label>
-
-  <label class="checkbox-label" for="clarity_si1">
-    <input type="checkbox" id="clarity_si1" name="clarity" value="SI1">
-    SI1
-  </label>
-
-  <label class="checkbox-label" for="clarity_vs2">
-    <input type="checkbox" id="clarity_vs2" name="clarity" value="VS2">
-    VS2
-  </label>
-
-  <label class="checkbox-label" for="clarity_vs1">
-    <input type="checkbox" id="clarity_vs1" name="clarity" value="VS1">
-    VS1
-  </label>
-
-  <label class="checkbox-label" for="clarity_vvs2">
-    <input type="checkbox" id="clarity_vvs2" name="clarity" value="VVS2">
-    VVS2
-  </label>
-
-  <label class="checkbox-label" for="clarity_vvs1">
-    <input type="checkbox" id="clarity_vvs1" name="clarity" value="VVS1">
-    VVS1
-  </label>
-
-  <label class="checkbox-label" for="clarity_if">
-    <input type="checkbox" id="clarity_if" name="clarity" value="IF">
-    IF
-  </label><br><br>
-
-  <label for="depth">Depth (float):</label>
-  <input type="number" id="depth" name="depth" step="0.01" required><br><br>
-
-  <label for="table">Table (float):</label>
-  <input type="number" id="table" name="table" step="0.01" required><br><br>
-
-  <input type="submit" value="Submit">
-</form>
-
-<script>
-  // JavaScript to handle checkbox styling
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', (event) => {
-      const label = event.target.nextElementSibling;
-      if (event.target.checked) {
-        label.style.backgroundColor = '#e0e0e0';
-      } else {
-        label.style.backgroundColor = '';
-      }
-    });
-  });
-</script>
+<footer>
+  <p>&copy; Habibi Corp Pvt.</p>
+</footer>
 
 </body>
 </html>

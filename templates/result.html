@@ -1,14 +1,53 @@
-<!-- result.html -->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Prediction Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #333;
+      font-size: 18px;
+    }
+
+    strong {
+      font-weight: bold;
+      color: #6a0606;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Prediction Result</h1>
+<div class="container">
+  <h1>Prediction Result</h1>
 
-<p>According to our prediction, the diamond price should be: <strong>{{ prediction }}</strong></p>
+  <p>According to our prediction, the diamond price should be(USD): <strong>{{ prediction }}</strong></p>
+
+</div>
 
 </body>
 </html>

@@ -1,3 +1,4 @@
+# local host address http://127.0.0.1:5000/
 from flask import Flask, render_template, request, jsonify
 from src.pipelines.prediction_pipeline import PredictPipeline, CustomData
 
@@ -46,7 +47,7 @@ def submit_form():
         prediction = predictor.predict(features)
 
         # Render the result page with the prediction
-        return render_template('result.html', prediction=prediction[0])
+        return render_template('result.html', prediction=int(prediction[0]))
 
     except Exception as e:
         # Handle exceptions
