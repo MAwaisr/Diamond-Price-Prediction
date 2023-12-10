@@ -30,3 +30,8 @@ The goal of the project is to predict the price of a diamond based on these feat
 3. To Run the app.py file from terminal, write:
     ```bash
     python app.py
+
+
+## Model Performance
+
+Multiple models like linear, ridge, lasso and Elastic Net are used. Linear regression shows best results with R2 score of around 92.48% on given dataset.
